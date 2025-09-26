@@ -51,7 +51,7 @@
     <div class="container">
         <div class="periodic-table">
             <h2>ตารางธาตุ</h2>
-            <img src="file:///D:/Users/BaiPhi/Downloads/โครงงาน/img/periodic-table-printable.png" alt="Periodic Table">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Simple_Periodic_Table_Chart-en.svg" alt="Periodic Table">
         </div>
 
         <div class="tool-container">
@@ -77,7 +77,7 @@
 
             <div class="image-container">
                 <h1>รูปตัวอย่าง</h1>
-                <img src="file:///D:/Users/BaiPhi/Downloads/โครงงาน/img/periodic-table-printable.png" alt="Your Image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Simple_Periodic_Table_Chart-en.svg" alt="Periodic Table">
             </div>
 
         </div>
@@ -138,11 +138,11 @@
             let html = "";
             let inputDiv = document.getElementById("mol-inputs");
             
-            if (formula === "mol1") html = <label>กรัม (g): <input type="number" id="g"></label><label>M.W.: <input type="number" id="mw"></label>;
-            else if (formula === "mol2") html = <label>Vdm³: <input type="number" id="vdm_mol2"></label>;
-            else if (formula === "mol3") html = <label>Vcm³: <input type="number" id="vcm_mol3"></label>;
-            else if (formula === "mol4") html = <label>M: <input type="number" id="M_mol4"></label><label>Vcm³: <input type="number" id="vcm_mol4"></label>;
-            else if (formula === "mol5") html = <label>M: <input type="number" id="M_mol5"></label><label>Vdm³: <input type="number" id="vdm_mol5"></label>;
+            if (formula === "mol1") html = `<label>กรัม (g): <input type="number" id="g"></label><label>M.W.: <input type="number" id="mw"></label>`;
+            else if (formula === "mol2") html = `<label>Vdm³: <input type="number" id="vdm_mol2"></label>`;
+            else if (formula === "mol3") html = `<label>Vcm³: <input type="number" id="vcm_mol3"></label>`;
+            else if (formula === "mol4") html = `<label>M: <input type="number" id="M_mol4"></label><label>Vcm³: <input type="number" id="vcm_mol4"></label>`;
+            else if (formula === "mol5") html = `<label>M: <input type="number" id="M_mol5"></label><label>Vdm³: <input type="number" id="vdm_mol5"></label>`;
 
             inputDiv.innerHTML = html;
         }
@@ -190,7 +190,7 @@
             div.className = "set";
             
             // โค้ดที่แก้ไขแล้ว
-            div.innerHTML = <label>M: <input type="number" class="M"></label><label>V: <input type="number" class="V"></label>;
+            div.innerHTML = `<label>M: <input type="number" class="M"></label><label>V: <input type="number" class="V"></label>`;
             
             container.appendChild(div);
         }
@@ -269,21 +269,21 @@
                     let solution_g=parseFloat(document.getElementById("solution_g_ww").value);
                     if(!isNaN(solute_g)&&!isNaN(solution_g)&&solution_g!==0) {
                         concentration = (solute_g / solution_g) * 100;
-                        result = % w/w = ${concentration.toFixed(4)} %;
+                        result = `% w/w = ${concentration.toFixed(4)} %`;
                     } else error = true;
                 } else if(formula==="vv"){
                     let solute_ml=parseFloat(document.getElementById("solute_ml_vv").value);
                     let solution_ml=parseFloat(document.getElementById("solution_ml_vv").value);
                     if(!isNaN(solute_ml)&&!isNaN(solution_ml)&&solution_ml!==0) {
                         concentration = (solute_ml / solution_ml) * 100;
-                        result = % v/v = ${concentration.toFixed(4)} %;
+                        result = `% v/v = ${concentration.toFixed(4)} %`;
                     } else error = true;
                 } else if(formula==="wv"){
                     let solute_g=parseFloat(document.getElementById("solute_g_wv").value);
                     let solution_ml=parseFloat(document.getElementById("solution_ml_wv").value);
                     if(!isNaN(solute_g)&&!isNaN(solution_ml)&&solution_ml!==0) {
                         concentration = (solute_g / solution_ml) * 100;
-                        result = % w/v = ${concentration.toFixed(4)} %;
+                        result = `% w/v = ${concentration.toFixed(4)} %`;
                     } else error = true;
                 }
 
